@@ -17,7 +17,7 @@ export default {
         ),
       ])
         .then((data) => {
-          dispatch("products/getAllProductsArray", data, { root: true });
+          commit("products/PUSH_PRODUCTS", data, { root: true });
           commit("UPDATE_LOADING_STATUS", false);
         })
         .catch((err) => {
