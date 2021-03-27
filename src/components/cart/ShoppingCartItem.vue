@@ -84,7 +84,7 @@ export default {
   },
   watch: {
     "item.price"(newPrice, oldPrice) {
-      newPrice > oldPrice ? (this.color = "error") : (this.color = "success");
+      this.color = newPrice > oldPrice ? "error" : "success";
     },
   },
 };
