@@ -18,6 +18,7 @@ export default {
       ])
         .then((data) => {
           dispatch("products/getAllProductsArray", data, { root: true });
+          commit("UPDATE_LOADING_STATUS", false);
         })
         .catch((err) => {
           commit("UPDATE_LOADING_STATUS", true);
