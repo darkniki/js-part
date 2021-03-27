@@ -1,8 +1,6 @@
 export default {
-  PUSH_PRODUCTS(state, data) {
+  UPDATE_PRODUCTS(state, { names, goods }) {
     state.allProducts = [];
-    const names = data[1];
-    const goods = data[0].Value.Goods;
     goods.forEach((item) => {
       const dollar = _.random(20, 80); // Обновление "доллара" для каждого продукта, чтобы цены менялись в разную сторону
       state.allProducts.push({

@@ -7,7 +7,7 @@ export default {
     },
   },
   actions: {
-    fetchProducts({ commit, dispatch }) {
+    fetchProducts({ commit }) {
       Promise.all([
         fetch("./api/data.json").then(
           (res) => (res.ok && res.json()) || Promise.reject(res)
@@ -16,8 +16,10 @@ export default {
           (res) => (res.ok && res.json()) || Promise.reject(res)
         ),
       ])
-        .then((data) => {
-          commit("products/PUSH_PRODUCTS", data, { root: true });
+        .then((productsData) => {
+          const names = productsData[1];
+          const goods = productsData[0].Value.Goods;
+          commit("products/UPDATE_PRODUCTS", { names, goods }, { root: true });
           commit("UPDATE_LOADING_STATUS", false);
         })
         .catch((err) => {
