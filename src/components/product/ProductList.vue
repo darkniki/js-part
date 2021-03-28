@@ -44,7 +44,7 @@ export default {
   computed: {
     ...mapGetters({
       allProductsByCat: "products/allProductsByCat",
-      isLoading: "fetch/isLoading",
+      isLoading: "isLoading",
     }),
   },
   methods: {

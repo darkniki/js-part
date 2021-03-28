@@ -10,8 +10,8 @@ export default {
     const cartItem = state.cart.find((item) => item.id === id);
     cartItem.quantity--;
   },
-  DELETE_PRODUCT_FROM_CART(state, cartItem) {
-    state.cart = state.cart.filter((t) => t !== cartItem);
+  DELETE_PRODUCT_FROM_CART(state, { id }) {
+    state.cart = state.cart.filter((item) => item.id !== id);
   },
   UPDATE_WARNING(state, value) {
     state.warning = value;

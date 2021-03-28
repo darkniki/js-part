@@ -17,6 +17,17 @@ const vuexPersist = new VuexPersist({
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  state: { isLoading: true },
+  mutations: {
+    SET_LOADING(state, value) {
+      state.isLoading = value;
+    },
+  },
+  getters: {
+    isLoading(state) {
+      return state.isLoading;
+    },
+  },
   modules: { fetch, products, shoppingCart },
   plugins: [vuexPersist.plugin], // LocalStorage
 });

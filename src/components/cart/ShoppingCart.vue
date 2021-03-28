@@ -47,10 +47,12 @@ export default {
   methods: {
     ...mapActions("shoppingCart", {
       addProductToCart: "addProductToCart",
-      deleteProductFromCart: "deleteProductFromCart",
       decrementProductFromCart: "decrementProductFromCart",
     }),
-    ...mapMutations("shoppingCart", { updateWarning: "UPDATE_WARNING" }),
+    ...mapMutations("shoppingCart", {
+      updateWarning: "UPDATE_WARNING",
+      deleteProductFromCart: "DELETE_PRODUCT_FROM_CART",
+    }),
   },
   watch: {
     cartTotalPrice(newPrice, oldPrice) {

@@ -1,11 +1,5 @@
 export default {
   namespaced: true,
-  state: { isLoading: true },
-  mutations: {
-    UPDATE_LOADING_STATUS(state, value) {
-      state.isLoading = value;
-    },
-  },
   actions: {
     fetchProducts({ commit }) {
       Promise.all([
@@ -20,17 +14,12 @@ export default {
           const names = productsData[1];
           const goods = productsData[0].Value.Goods;
           commit("products/UPDATE_PRODUCTS", { names, goods }, { root: true });
-          commit("UPDATE_LOADING_STATUS", false);
+          commit("SET_LOADING", false, { root: true });
         })
         .catch((err) => {
-          commit("UPDATE_LOADING_STATUS", true);
+          commit("SET_LOADING", true, { root: true });
           console.log(err);
         });
-    },
-  },
-  getters: {
-    isLoading(state) {
-      return state.isLoading;
     },
   },
 };
