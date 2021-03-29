@@ -8,10 +8,7 @@ import products from "./modules/products";
 import VuexPersist from "vuex-persist";
 const vuexPersist = new VuexPersist({
   storage: window.localStorage,
-  reducer: (state) => ({
-    shoppingCart: state.shoppingCart,
-    products: state.products,
-  }),
+  reducer: (state) => ({ shoppingCart: state.shoppingCart }),
 });
 
 Vue.use(Vuex);

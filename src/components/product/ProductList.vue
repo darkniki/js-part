@@ -7,15 +7,18 @@
     </v-overlay>
     <v-row justify="center">
       <v-expansion-panels multiple focusable inset v-model="panel">
-        <v-expansion-panel v-for="(category, i) in allProductsByCat" :key="i">
+        <v-expansion-panel
+          v-for="(items, category) in allProductsByCat"
+          :key="items[0].catId"
+        >
           <v-expansion-panel-header>
-            {{ category.title }}
+            {{ category }}
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-container>
               <product-list-item
-                v-for="(product, t) in category.items"
-                :key="t"
+                v-for="product in items"
+                :key="product.id"
                 :product="product"
                 @addProductToCart="addProductToCart"
               />

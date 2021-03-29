@@ -2,8 +2,8 @@
   <div v-if="cartProducts.length" class="pb-5 mb-10">
     <h2>Корзина:</h2>
     <shopping-cart-item
-      v-for="(item, i) in cartProducts"
-      :key="i"
+      v-for="item in cartProducts"
+      :key="item.id"
       :item="item"
       @decrementProductFromCart="decrementProductFromCart"
       @addProductToCart="addProductToCart"
