@@ -26,4 +26,3 @@ export default {
   components: { ProductList, ShoppingCart, TheHeader, TheFooter },
 };
 </script>
-<!--test-->
