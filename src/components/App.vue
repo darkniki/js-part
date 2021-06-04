@@ -5,7 +5,6 @@
     <v-container grid-list-xs>
       <product-list />
       <shopping-cart v-if="!isLoading" />
-      <h1>test</h1>
       <br />
     </v-container>
     <the-footer />
