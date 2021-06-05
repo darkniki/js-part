@@ -1,13 +1,12 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "js-part",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
     "lodash": "^4.17.21",
     "vue": "^2.6.11",
     "vuetify": "^2.4.0",
