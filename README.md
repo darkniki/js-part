@@ -1,6 +1,6 @@
 # test
 
-http://darkniki.ddns.net:8088/
+http://js-test.lllllll.ru/
 
 ## Project setup
 ```
